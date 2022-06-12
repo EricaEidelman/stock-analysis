@@ -94,9 +94,9 @@ And following is the snippet from the refactored code. The first for loop sets t
          End If
     
     Next i
-    ```
+```
     
 ## Summary
-- What are the advantages of disadvantages of refactoring code?
+As learned from this project, refactoring code has its advantages and disadvantages. One obvious advantage of refactoring is that code can be changed to become more efficient, time or logic-wise. Additionally, refactoring code may serve as a way to standardize it in case the data changes. For example, just as hard coding numbers isn't recommended in Excel functions in case inputs change, refactoring code to replace plugged in numbers will increase its usability for other analyses. However, as with anything else, there may be too much of a good thing and code may be refactored to the point where it doesn't necessarily run in a more efficient manner. Another disadvantage of refactoring is that one needs to be extra careful as some details may need to be changed in order to make sure the new logic works.
 
-- How do these pros and cons apply to refactoring the original VBA script?
+For example, the original code shown above used the "ticker" variable to move from one ticker symbol to the next. On the other hand, the refactored code didn't need that variable as the ticker, volume, and price arrays all referred to the "tickerIndex" variable. However, when refactoring the code, that detail was initially missed which resulted in a frustrating period of the macro not working. On the other hand, the advantages mentioned above clearly apply in this case as the refactored code did run significantly faster than the original code. Likewise, the "tickerIndex" variable allows for this code snippet to be reused on a larger data set which may have more than just 12 individual stocks.
